@@ -3,7 +3,7 @@
     <AssemblyName>Dapper.Tests.Performance</AssemblyName>
     <Description>Dapper Core Performance Suite</Description>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net462;netcoreapp3.1</TargetFrameworks>
+    <TargetFramework>net6.0</TargetFramework>
     <IsTestProject>false</IsTestProject>
     <NoWarn>$(NoWarn);IDE0063;IDE0034;IDE0059;IDE0060</NoWarn>
   </PropertyGroup>
@@ -15,7 +15,7 @@
     <!--<PackageReference Include="BLToolkit" Version="4.3.6" />-->
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="FirebirdSql.Data.FirebirdClient" Version="7.5.0" />
-    <PackageReference Include="linq2db.SqlServer" Version="3.1.6" />
+    <PackageReference Include="linq2db.SqlServer" Version="4.1.1" />
     <PackageReference Include="MySqlConnector" Version="1.1.0" />
     <PackageReference Include="NHibernate" Version="5.3.5" />
     <PackageReference Include="Iesi.Collections" Version="4.0.4" />

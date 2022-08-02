@@ -2,6 +2,7 @@
 using Dapper.Contrib.Extensions;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Dapper.Tests.Performance
 {
@@ -49,6 +50,13 @@ namespace Dapper.Tests.Performance
             return _connection.QueryFirstOrDefault<Post>("select * from Posts where Id = @Id", new { Id = i });
         }
 
+        [Benchmark(Description = "QueryFirstOrDefault<T> async")]
+        public async Task<Post> QueryFirstOrDefaultAsync()
+        {
+            Step();
+            return await _connection.QueryFirstOrDefaultAsync<Post>("select * from Posts where Id = @Id", new { Id = i });
+        }
+        
         [Benchmark(Description = "QueryFirstOrDefault<dynamic>")]
         public dynamic QueryFirstOrDefaultDynamic()
         {
@@ -61,6 +69,13 @@ namespace Dapper.Tests.Performance
         {
             Step();
             return _connection.Get<Post>(i);
+        }
+        
+        [Benchmark(Description = "Contrib Get<T> async")]
+        public async Task<Post> ContribGetAsync()
+        {
+            Step();
+            return await _connection.GetAsync<Post>(i);
         }
     }
 }
